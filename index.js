@@ -75,6 +75,10 @@ app.use(uppy.app(options))
 app.get('/', (req, res) => res.send('Lambda'));
 app.get('/tt', (req, res) => res.send('fef'));
 
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}.`);
-});
+if (process.env.ENIRONMENT === 'production') {
+  module.exports = app;
+} else {
+  app.listen(port, () => {
+    console.log(`Server is listening on port ${port}.`);
+  });
+}
