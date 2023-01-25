@@ -1,5 +1,7 @@
 const express = require('express');
 // const serverless = require('serverless-http');
+// const { createServer } = require("http")
+
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const compression = require('compression')
@@ -74,7 +76,13 @@ app.use(uppy.app(options))
 app.get('/', (req, res) => res.send('Lambda'));
 app.get('/tt', (req, res) => res.send('fef'));
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server is listening on port ${port}.`);
 });
-// module.exports = app;
+
+// const httpServer = createServer(app)
+// httpServer.listen(port, () => {
+//   console.log(`Server is listening on port ${port}.`);
+// });
+uppy.socket(server)
+module.exports = app;
