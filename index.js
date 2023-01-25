@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 const port = process.env.PORT;
 
 
-// app.use(compression())
+app.use(compression())
 // app.use(cors())
 app.use(session({
   secret: process.env.SESSION_SECRET,
