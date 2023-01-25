@@ -30,7 +30,6 @@ const host = DOMAIN.split('://')[1]
 const protocol = DOMAIN.split('://')[0]
 
 if (!fs.existsSync('/tmp')) fs.mkdirSync('/tmp');
-// if (!fs.existsSync('./tmp')) fs.mkdirSync('./tmp');
 
 const options = {
   providerOptions: {
