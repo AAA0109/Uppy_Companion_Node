@@ -1,6 +1,9 @@
 {
   "name": "uploader",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@uppy/companion": "^3.7.2",
     "body-parser": "^1.18.3",
